@@ -24,7 +24,8 @@ object RollsState:
       .toList
 
   @tailrec
-  private def accUltimatelyAccessibleRolls(rolls: Set[Coordinate], acc: Int): Int = RollsState(rolls).accessibleRolls match {
-    case accessed if accessed.isEmpty => acc
-    case accessed => accUltimatelyAccessibleRolls(rolls removedAll accessed, acc + accessed.size)
-  }
+  private def accUltimatelyAccessibleRolls(rolls: Set[Coordinate], acc: Int): Int =
+    RollsState(rolls).accessibleRolls match {
+      case accessed if accessed.isEmpty => acc
+      case accessed => accUltimatelyAccessibleRolls(rolls removedAll accessed, acc + accessed.size)
+    }
