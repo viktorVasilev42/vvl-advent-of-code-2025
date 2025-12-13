@@ -1,6 +1,6 @@
-import day6.Day6
+import day7.Day7
 
 @main
 def main(): Unit =
-  val result = Day6.part2()
+  val result = Day7.part2()
   println("Result: " + result)
